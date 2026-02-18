@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+
+/* Calendar Container */
+.react-datepicker {
+  border-radius: 20px !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+  padding: 12px !important;
+  font-family: inherit !important;
+}
+
+/* Header */
+.react-datepicker__header {
+  background: white !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
+
+/* Month & Year text */
+.react-datepicker__current-month {
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  color: #111827 !important;
+}
+
+/* Day style */
+.react-datepicker__day {
+  border-radius: 9999px !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Hover effect */
+.react-datepicker__day:hover {
+  background-color: #e0e7ff !important;
+  border-radius: 9999px !important;
+}
+
+/* Selected day */
+.react-datepicker__day--selected {
+  background-color: #4f46e5 !important;
+  color: white !important;
+  border-radius: 9999px !important;
+}
+
+/* Today highlight */
+.react-datepicker__day--today {
+  font-weight: bold !important;
+  color: #4f46e5 !important;
+}
+
+/* Dropdown select */
+.react-datepicker__month-select,
+.react-datepicker__year-select {
+  border-radius: 10px !important;
+  padding: 4px 8px !important;
+  border: 1px solid #e5e7eb !important;
+}

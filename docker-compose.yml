@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+    container_name: voucher_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/var/www
+    working_dir: /var/www
+    command: php artisan serve --host=0.0.0.0 --port=8000
+    depends_on:
+      - db
+    networks:
+      - voucher
+    restart: unless-stopped
+
+  db:
+    image: mysql:8
+    container_name: voucher_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: voucher
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: voucher
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - voucher
+
+  frontend:
+    image: node:20
+    container_name: voucher_frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host"
+    networks:
+      - voucher
+    restart: unless-stopped
+
+volumes:
+  dbdata:
+
+networks:
+  voucher:
