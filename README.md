@@ -45,7 +45,7 @@ php artisan key:generate
 php artisan migrate
 ```
 
-## 5. Steps to run the backend
+## 5. Steps to run
 
 ### backend
 ```bash
