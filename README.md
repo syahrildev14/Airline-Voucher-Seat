@@ -49,9 +49,11 @@ php artisan migrate
 
 ### backend
 ```bash
+cd backend
 php artisan serve
 ```
 ### frontend
 ```bash
+cd frontend
 npm run dev
 ```
